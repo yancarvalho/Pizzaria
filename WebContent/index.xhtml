@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+    	xmlns:h="http://java.sun.com/jsf/html"
+    	xmlns:f="http://java.sun.com/jsf/core"
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<title>Pizzaria Sortsnow</title>
+</h:head>
+
+<h:body>
+	<h:form>
+	
+	<!-- CABECALHO DO SITE (titulo com o nome da pizzaria) -->	
+		<div>
+			<ui:insert name="title">
+				<ui:include src="/pattern/title.xhtml" />
+			</ui:insert>
+		</div>
+		
+	<!-- PAINEL DO MENU PRINCIPAL -->
+		<div>
+			<ui:insert name="menuPrincipal">
+				<ui:include src="/pattern/menuPrincipal.xhtml" />
+			</ui:insert>
+		</div>	
+			
+ 	<!-- AREA DE DESTAQUES DO HOTEL -->
+ 		<p:growl id="painelDestaques" showDetail="true" />
+ 		<p:panel widgetVar="painelDestaques" style="background:#D3D3D3">
+			<div align="center">
+	    	<p><h:outputText style="text-align:center; margin-bottom:10px; helvetica; font-size:18px; color:#000000" 
+	    				value="A Pizzaria Sortsnow apresenta uma variedade de produtos e promoções para seu consumo. Confira:"/></p></div>
+		
+		    <p:carousel numVisible="1" effect="easeInStrong" headerText="Produtos" style="margin-bottom:px; helvetica; font-size:16px; background-color:#8B7765" 
+		    			circular="true" autoPlayInterval="5200" responsive="true" pageLinks="4">
+		    	<p:tab title="Pepperoni" >
+		            <h:panelGrid columns="2" cellpadding="10">
+		                <p:graphicImage value="/img/pepperoni.jpg" width="400px" height="300px" title="Deliciosa"/>
+		                <h:outputText value="A fantástica pizza de pepperoni vai fazer você delirar nessa explosão de sabor." />
+		            </h:panelGrid>
+		        </p:tab>
+		        <p:tab title="Cocacola">
+		            <h:panelGrid columns="2" cellpadding="10">
+		                <p:graphicImage value="/img/coca.jpg" width="400px" height="300px" title="Coca-cola"/>
+		                 <h:panelGrid columns="1" cellpadding="10">
+		                <h:outputText value="Na compra de dois refrigerantes Coca-cola 2 Litros você ganha mais um." />
+						<h:outputText style="font-size:12px;" value="*Promoção válida até o fim dos tempos" />
+						<h:outputText style="font-size:12px;" value="**Se preferir pode levar Xamego 3L" />
+					</h:panelGrid>
+		            </h:panelGrid>
+		        </p:tab>
+		        <p:tab title="Academia"  style="background-color:#8B7765">
+		            <h:panelGrid columns="2" cellpadding="10" >
+		                <p:graphicImage value="/img/academia.jpeg" width="400px" height="300px" title="Academia"/>
+		                <h:outputText value="Academia com espaço amplo, organizado e equipamentos modernos." />
+		            </h:panelGrid>
+		        </p:tab>
+		        <p:tab title="Quadra Squash">
+		            <h:panelGrid columns="2" cellpadding="10">
+		                <p:graphicImage value="/img/esportetenis.jpg" width="400px" height="300px" title="Squash"/>
+		                <h:outputText value="Quadra de Squash com piso de madeira (verificar horário disponível)." />
+		            </h:panelGrid>
+		        </p:tab>
+		    </p:carousel>
+			   </p:panel>
+	   
+	   
+	   
+	<!-- RODAPE -->
+	   	<div>
+		<ui:insert name="footer">
+			<ui:include src="/pattern/footer.xhtml" />
+		</ui:insert>
+		</div>
+
+	</h:form>
+
+</h:body>
+</html>

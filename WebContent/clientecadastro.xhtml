@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+<title>Pizzaria Sortsnow</title>
+</h:head>
+<h:body>
+
+	<!-- CABECALHO DO SITE (titulo com o nome da pizzaria) -->	
+		<div>
+			<ui:insert name="title">
+				<ui:include src="/pattern/title.xhtml" />
+			</ui:insert>
+		</div>
+
+	<!-- PAINEL DO MENU PRINCIPAL -->
+		<div>
+			<ui:insert name="menuPrincipal">
+				<ui:include src="/pattern/menuPrincipal.xhtml" />
+			</ui:insert>
+		</div>
+		
+	<!-- PAINEL DO CLIENTE -->	
+		<p:growl id="pCliente" showDetail="true" />
+		
+		<p:panel id="cliente" header="Cliente" style="margin-bottom:20px">
+	        <h:panelGrid columns="2" cellpadding="5">
+	            <h:outputLabel value="ID: " />
+	            <p:inputText id="txtID" />
+	            <h:outputLabel value="Telefone: " />
+	            <p:inputMask id="txtTelefone" value="#{maskView.date}" mask="99999-9999" />
+	            <h:outputLabel value="Nome: " />
+	            <p:inputText id="txtNome" />
+	            <h:outputLabel value="Logradouro: " />
+	            <p:inputText id="txtLogradouro" />
+	            <h:outputLabel value="Número: " />
+	            <p:inputText id="txtNumero" />
+	            <h:outputLabel value="Complemento: " />
+	            <p:inputText id="txtComplemento" />
+	            <h:outputLabel value="Bairro: " />
+	            <p:inputText id="txtBairro" />
+	            <h:outputLabel value="Referência: " />
+	            <p:inputText id="txtReferencia" />
+	            <h:outputLabel value="CEP: " />
+	            <p:inputMask id="txtCep" value="#{maskView.date}" mask="99999-999" />
+	            <p:button id="btSalvar" value="Salvar" icon="ui-icon-disk"/>
+	        </h:panelGrid>
+	    </p:panel>
+		
+
+</h:body>
+</html>

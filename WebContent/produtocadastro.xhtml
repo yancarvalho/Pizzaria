@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<title>Pizzaria Sortsnow</title>
+</h:head>
+<h:body>
+	<h:form>
+	
+	<!-- CABECALHO DO SITE -->	
+		<div>
+			<ui:insert name="title">
+				<ui:include src="/pattern/title.xhtml" />
+			</ui:insert>
+		</div>
+
+	<!-- PAINEL DO MENU PRINCIPAL -->
+		<div>
+			<ui:insert name="menuPrincipal">
+				<ui:include src="/pattern/menuPrincipal.xhtml" />
+			</ui:insert>
+		</div>
+		
+	<!-- PAINEL DO TIPO PRODUTO -->	
+		<p:growl globalOnly="true" showSummary="true" showDetail="false" tooltip="true" />
+ 
+	    <p:panel header="Tipo de Produto" style="margin-bottom:20px">
+	        <h:panelGrid columns="2" cellpadding="5">
+	            <h:outputLabel value="ID: " />
+	            <p:inputText id="txtIDTP" value="#{produtoMB.tipoProduto.id}"/>
+	            <h:outputLabel value="Descrição: " />
+	            <p:inputText id="txtDescricaoTP" value="#{produtoMB.tipoProduto.descricao}"/>
+	            <p:commandButton id="btSalvarTP" value="Salvar" icon="ui-icon-disk" action="#{produtoMB.adicionar}"/>
+	        </h:panelGrid>
+	    </p:panel>
+	 
+	 <!-- PAINEL DO PRODUTO -->	
+	    <p:panel id="produto" header="Produto" style="margin-bottom:20px">
+	        <h:panelGrid columns="2" cellpadding="5">
+	        	<h:outputLabel value="ID: " />
+	            <p:inputText id="txtIDP" />
+	            <h:outputLabel value="Nome: " />
+	            <p:inputText id="txtNome" />  
+	            <h:outputLabel value="Descrição: " />
+	            <p:inputText id="txtDescricaoP" />   
+	            <p:outputLabel value="Preço: " />
+        		<p:inputMask id="txtPreco" mask="999,99R$"/>
+        		<p:outputLabel for="idTipoProdutoP" value="Tipo de Produto:" />
+		        <p:selectOneMenu id="idTipoProdutoP" style="width:125px">
+		            <f:selectItem itemLabel="" itemValue="" />
+		            <f:selectItem itemLabel="Bebida" itemValue="Bebida" />
+		            <f:selectItem itemLabel="Doce" itemValue="Doce" />
+		            <f:selectItem itemLabel="Salgado" itemValue="Salgado" />
+		        </p:selectOneMenu> 
+		        <p:button id="btSalvarP" value="Salvar" icon="ui-icon-disk"/>
+	        </h:panelGrid>
+	    </p:panel>
+		
+	</h:form>
+
+</h:body>
+</html>

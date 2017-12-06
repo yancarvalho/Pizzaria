@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+    	xmlns:h="http://java.sun.com/jsf/html"
+    	xmlns:f="http://java.sun.com/jsf/core"
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+</h:head>
+<h:body>
+
+	<h:form>
+	
+		<p:growl id="painelMenuPrincipal" showDetail="true" />	
+	   	<div class="menuPrincipal">
+			<p:panel id="menu_principal" header="Menu Principal" widgetVar="painelMenuPrincipal" style="margin-bottom:5px; font-size:16px; 
+						background:#D3D3D3"> 
+			<h:panelGrid columns="2" cellpadding="5" >    
+ 			<h:form>
+    			<p:growl id="messages" showDetail="true"/> 
+    			<p:menuButton value="Cadastro">
+        			<p:menuitem value="Produto" url="produtocadastro.xhtml" update="messages" icon="ui-icon-disk"/>
+        			<p:menuitem value="Cliente" url="clientecadastro.xhtml" update="messages" icon="ui-icon-disk"/>
+   				</p:menuButton>
+			</h:form>
+ 			
+			</h:panelGrid>
+        	</p:panel>	
+       </div>
+       
+	</h:form>
+</h:body>
+</html>
